@@ -20,12 +20,30 @@ class _ContactsScreenState extends State<ContactsScreen> {
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
                     children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: CircleAvatar(
-                          radius: 20,
-                          backgroundImage: AssetImage("images/test_avatar.jpg"),
-                        ),
+                      Stack(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: CircleAvatar(
+                              radius: 35,
+                              backgroundImage: AssetImage("images/test_avatar.jpg"),
+                            ),
+                          ),
+
+                          Positioned(
+                              right: 2,
+                              child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.red,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(color: Colors.white, width: 3)
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 8, right: 8),
+                              child: Text("+9", style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.w600),),
+                            ),
+                          ))
+                        ],
                       ),
 
                       Text("Chats", style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),)
@@ -38,14 +56,14 @@ class _ContactsScreenState extends State<ContactsScreen> {
                   child: Row(
                     children: <Widget>[
                       CircleAvatar(
-                        backgroundColor: Colors.grey,
+                        backgroundColor: Colors.grey[200],
                         child: Icon(Icons.camera_alt, color: Colors.black,),
                       ),
 
                       SizedBox(width: 10,),
 
                       CircleAvatar(
-                        backgroundColor: Colors.grey,
+                        backgroundColor: Colors.grey[200],
                         child: Icon(Icons.edit, color: Colors.black,),
                       )
                     ],
@@ -53,6 +71,86 @@ class _ContactsScreenState extends State<ContactsScreen> {
                 ),
               ],
             ),
+
+            SizedBox(height: 10,),
+
+            Padding(
+              padding: const EdgeInsets.only(left: 14, right: 14),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.grey[300],
+                  borderRadius: BorderRadius.circular(25)
+                ),
+                width: MediaQuery.of(context).size.width - 40,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 12),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: "Search",
+                      border: InputBorder.none,
+                      icon: Icon(Icons.search)
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+            SizedBox(
+              height: 10,
+            ),
+
+            Container(
+              height: 80,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(left: 14),
+                    child: CircleAvatar(
+                      radius: 25,
+                      backgroundColor: Colors.grey[300],
+                      child: Icon(Icons.add, size: 24, color: Colors.black,),),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: CircleAvatar(
+                      radius: 30,
+                      backgroundColor: Colors.grey[300],
+                      backgroundImage: AssetImage("images/test_avatar.jpg"),
+                      ),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: CircleAvatar(
+                      radius: 30,
+                      backgroundColor: Colors.grey[300],
+                      backgroundImage: AssetImage("images/test_avatar.jpg"),
+                    ),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: CircleAvatar(
+                      radius: 30,
+                      backgroundColor: Colors.grey[300],
+                      backgroundImage: AssetImage("images/test_avatar.jpg"),
+                    ),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: CircleAvatar(
+                      radius: 30,
+                      backgroundColor: Colors.grey[300],
+                      backgroundImage: AssetImage("images/test_avatar.jpg"),
+                    ),
+                  ),
+
+                ],
+              ),
+            )
           ],
         ),
       ),
